@@ -1,6 +1,5 @@
-import { Instagram, MapPin, Phone, Mail, Heart, Sparkles } from "lucide-react";
+import { Instagram, MapPin, Phone, Heart, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-jewelry.jpg";
-import adaLogo from "@/assets/ada-logo.png";
 import necklaceImg from "@/assets/jewelry-necklace.jpg";
 import earringsImg from "@/assets/jewelry-earrings.jpg";
 import ringImg from "@/assets/jewelry-ring.jpg";
@@ -28,7 +27,10 @@ const Index = () => {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <img src={adaLogo} alt="Ada Gioielli" className="h-12 md:h-16 object-contain" />
+          <div className="flex flex-col items-center">
+            <span className="font-serif text-2xl md:text-3xl tracking-[0.15em] text-gradient-gold font-medium">ADA</span>
+            <span className="font-sans text-[10px] md:text-xs tracking-[0.4em] text-muted-foreground uppercase -mt-1">Gioielli</span>
+          </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#inicio" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide">Início</a>
             <a href="#sobre" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide">Quem Somos</a>
@@ -59,12 +61,13 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center pt-20">
-          <div className="animate-fade-in">
-            <img 
-              src={adaLogo} 
-              alt="Ada Gioielli" 
-              className="h-32 md:h-48 mx-auto mb-8 animate-float"
-            />
+          <div className="animate-fade-in mb-8">
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent mb-6" />
+              <span className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-[0.2em] text-gradient-gold font-medium animate-float">ADA</span>
+              <span className="font-sans text-sm md:text-base tracking-[0.5em] text-muted-foreground uppercase mt-2">Gioielli</span>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent mt-6" />
+            </div>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-6 animate-fade-in-delay-1">
@@ -290,7 +293,10 @@ const Index = () => {
       <footer className="py-12 bg-card border-t border-border">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <img src={adaLogo} alt="Ada Gioielli" className="h-12" />
+            <div className="flex flex-col items-center">
+              <span className="font-serif text-xl tracking-[0.15em] text-gradient-gold font-medium">ADA</span>
+              <span className="font-sans text-[8px] tracking-[0.4em] text-muted-foreground uppercase -mt-0.5">Gioielli</span>
+            </div>
             <p className="text-muted-foreground font-sans text-sm text-center">
               © 2024 Ada Gioielli. Todos os direitos reservados. Transformando amor em joias.
             </p>
