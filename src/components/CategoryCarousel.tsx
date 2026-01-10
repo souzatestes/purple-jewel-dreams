@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -6,21 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-interface Category {
-  name: string;
-  icon: string;
-  slug: string;
-}
-
-const categories: Category[] = [
-  { name: "Colares", icon: "✨", slug: "colares" },
-  { name: "Brincos", icon: "💎", slug: "brincos" },
-  { name: "Anéis", icon: "💍", slug: "aneis" },
-  { name: "Pulseiras", icon: "⭐", slug: "pulseiras" },
-  { name: "Infantil", icon: "🌸", slug: "infantil" },
-  { name: "Religiosas", icon: "🙏", slug: "religiosas" },
-];
+import { CATEGORIAS } from "@/config/siteConfig";
 
 interface CategoryCarouselProps {
   onCategoryClick: (slug: string) => void;
@@ -38,7 +23,7 @@ const CategoryCarousel = ({ onCategoryClick, activeCategory }: CategoryCarouselP
         className="w-full"
       >
         <CarouselContent className="-ml-2 md:-ml-4">
-          {categories.map((category) => (
+          {CATEGORIAS.map((category) => (
             <CarouselItem key={category.slug} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
               <button
                 onClick={() => onCategoryClick(category.slug)}
@@ -49,14 +34,14 @@ const CategoryCarousel = ({ onCategoryClick, activeCategory }: CategoryCarouselP
                   }`}
               >
                 <span className="text-3xl mb-2 transition-transform duration-300 group-hover:scale-110">
-                  {category.icon}
+                  {category.icone}
                 </span>
                 <span className={`font-serif text-sm md:text-base transition-colors duration-300
                   ${activeCategory === category.slug 
                     ? "text-primary-foreground" 
                     : "text-foreground group-hover:text-primary"
                   }`}>
-                  {category.name}
+                  {category.nome}
                 </span>
               </button>
             </CarouselItem>
@@ -69,4 +54,4 @@ const CategoryCarousel = ({ onCategoryClick, activeCategory }: CategoryCarouselP
   );
 };
 
-export { CategoryCarousel, categories };
+export { CategoryCarousel };

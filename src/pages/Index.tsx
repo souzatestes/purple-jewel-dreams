@@ -1,27 +1,51 @@
 import { useState } from "react";
 import { Instagram, Heart, Sparkles, Menu, X } from "lucide-react";
+
+// 🎨 IMAGENS - Adicione suas imagens aqui
 import heroImage from "@/assets/hero-jewelry.jpg";
 import necklaceImg from "@/assets/jewelry-necklace.jpg";
 import earringsImg from "@/assets/jewelry-earrings.jpg";
 import ringImg from "@/assets/jewelry-ring.jpg";
 import braceletImg from "@/assets/jewelry-bracelet.jpg";
-import { CategoryCarousel, categories } from "@/components/CategoryCarousel";
+
+// 📦 COMPONENTES
+import { CategoryCarousel } from "@/components/CategoryCarousel";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { ContactSection, INSTAGRAM_URL } from "@/components/ContactSection";
+import { ContactSection } from "@/components/ContactSection";
 import { ProductCard } from "@/components/ProductCard";
+
+// ⚙️ CONFIGURAÇÃO - Edite o arquivo siteConfig.ts para alterar textos e produtos
+import { 
+  MARCA, 
+  HERO, 
+  SOBRE, 
+  MENU, 
+  CATEGORIAS, 
+  PRODUTOS, 
+  CONTATOS,
+  getCategoryBySlug 
+} from "@/config/siteConfig";
+
+// Mapeamento de imagens (adicione novas imagens aqui)
+const IMAGENS: Record<string, string> = {
+  "jewelry-necklace.jpg": necklaceImg,
+  "jewelry-earrings.jpg": earringsImg,
+  "jewelry-ring.jpg": ringImg,
+  "jewelry-bracelet.jpg": braceletImg,
+  "hero-jewelry.jpg": heroImage,
+};
 
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const allProducts = [
-    { name: "Colar Delicato", image: necklaceImg, price: "Sob consulta", category: "colares" },
-    { name: "Brincos Grace", image: earringsImg, price: "Sob consulta", category: "brincos" },
-    { name: "Anel Amore", image: ringImg, price: "Sob consulta", category: "aneis" },
-    { name: "Pulseira Bella", image: braceletImg, price: "Sob consulta", category: "pulseiras" },
-    { name: "Colar Bambina", image: necklaceImg, price: "Sob consulta", category: "infantil" },
-    { name: "Pingente Fé", image: earringsImg, price: "Sob consulta", category: "religiosas" },
-  ];
+  // Mapeia produtos com imagens reais
+  const allProducts = PRODUTOS.map(p => ({
+    name: p.nome,
+    image: IMAGENS[p.imagem] || necklaceImg,
+    price: p.preco,
+    category: p.categoria,
+  }));
 
   const filteredProducts = activeCategory 
     ? allProducts.filter(p => p.category === activeCategory)
@@ -32,7 +56,7 @@ const Index = () => {
   };
 
   const getCategoryName = (slug: string) => {
-    return categories.find(c => c.slug === slug)?.name || slug;
+    return getCategoryBySlug(slug)?.nome || slug;
   };
 
   return (
@@ -58,13 +82,13 @@ const Index = () => {
           </div>
 
           <a 
-            href={INSTAGRAM_URL}
+            href={CONTATOS.instagram.url}
             target="_blank" 
             rel="noopener noreferrer"
             className="hidden md:flex items-center gap-2 bg-primary/20 hover:bg-primary/30 text-primary px-4 py-2 rounded-full transition-all duration-300 font-sans text-sm hover:scale-105"
           >
             <Instagram className="w-4 h-4" />
-            <span>@adagioielli</span>
+            <span>@{CONTATOS.instagram.usuario}</span>
           </a>
 
           {/* Mobile Menu Button */}
@@ -86,13 +110,13 @@ const Index = () => {
               <a href="#joias" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Joias</a>
               <a href="#contato" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Contato</a>
               <a 
-                href={INSTAGRAM_URL}
+                href={CONTATOS.instagram.url}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-primary font-sans text-base py-2"
               >
                 <Instagram className="w-5 h-5" />
-                @adagioielli
+                @{CONTATOS.instagram.usuario}
               </a>
             </div>
           </div>
@@ -269,7 +293,7 @@ const Index = () => {
 
           <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href={INSTAGRAM_URL}
+              href={CONTATOS.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 border border-primary hover:bg-primary hover:text-primary-foreground text-primary px-8 py-4 rounded-full font-sans transition-all duration-300 hover:scale-105"
@@ -300,7 +324,7 @@ const Index = () => {
             </p>
             <div className="flex items-center gap-4">
               <a 
-                href={INSTAGRAM_URL}
+                href={CONTATOS.instagram.url}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary/20 hover:bg-primary/30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"

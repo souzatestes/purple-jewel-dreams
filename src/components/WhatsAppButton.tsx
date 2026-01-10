@@ -1,12 +1,5 @@
 import { MessageCircle } from "lucide-react";
-
-const WHATSAPP_NUMBER = "5519971154949";
-const WHATSAPP_MESSAGE = "Olá, vim pelo site e quero conhecer mais sobre as joias";
-
-const getWhatsAppUrl = (customMessage?: string) => {
-  const message = encodeURIComponent(customMessage || WHATSAPP_MESSAGE);
-  return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${message}`;
-};
+import { getWhatsAppUrl } from "@/config/siteConfig";
 
 interface WhatsAppButtonProps {
   variant?: "floating" | "inline" | "cta";
@@ -59,4 +52,4 @@ const WhatsAppButton = ({ variant = "floating", customMessage, className = "", c
   );
 };
 
-export { WhatsAppButton, getWhatsAppUrl, WHATSAPP_NUMBER };
+export { WhatsAppButton };

@@ -1,4 +1,4 @@
-import { getWhatsAppUrl } from "./WhatsAppButton";
+import { getWhatsAppUrl } from "@/config/siteConfig";
 
 interface ProductCardProps {
   name: string;
