@@ -1,6 +1,6 @@
+// Atualizado: usando config centralizada
 import { useState } from "react";
 import { Instagram, Heart, Sparkles, Menu, X } from "lucide-react";
-
 // 🎨 IMAGENS - Adicione suas imagens aqui
 import heroImage from "@/assets/hero-jewelry.jpg";
 import necklaceImg from "@/assets/jewelry-necklace.jpg";
