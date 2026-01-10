@@ -1,8 +1,10 @@
 // Atualizado: usando config centralizada
 import { useState } from "react";
 import { Instagram, Heart, Sparkles, Menu, X } from "lucide-react";
+
 // 🎨 IMAGENS - Adicione suas imagens aqui
 import heroImage from "@/assets/hero-jewelry.jpg";
+import adaLogo from "@/assets/ada-logo.png";
 import necklaceImg from "@/assets/jewelry-necklace.jpg";
 import earringsImg from "@/assets/jewelry-earrings.jpg";
 import ringImg from "@/assets/jewelry-ring.jpg";
@@ -67,9 +69,8 @@ const Index = () => {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <a href="#inicio" className="flex flex-col items-center group cursor-pointer">
-            <span className="font-serif text-2xl md:text-3xl tracking-[0.15em] text-gradient-gold font-medium group-hover:opacity-80 transition-opacity">ADA</span>
-            <span className="font-sans text-[10px] md:text-xs tracking-[0.4em] text-muted-foreground uppercase -mt-1">Gioielli</span>
+          <a href="#inicio" className="flex items-center gap-2 group cursor-pointer">
+            <img src={adaLogo} alt="Ada Gioielli" className="h-10 md:h-12 w-auto group-hover:opacity-80 transition-opacity" />
           </a>
 
           {/* Desktop Menu */}
@@ -138,8 +139,7 @@ const Index = () => {
           <div className="animate-fade-in mb-8">
             <div className="flex flex-col items-center">
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent mb-6" />
-              <span className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-[0.2em] text-gradient-gold font-medium animate-shimmer">ADA</span>
-              <span className="font-sans text-sm md:text-base tracking-[0.5em] text-muted-foreground uppercase mt-2">Gioielli</span>
+              <img src={adaLogo} alt="Ada Gioielli" className="h-24 md:h-32 lg:h-40 w-auto animate-shimmer" />
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent mt-6" />
             </div>
           </div>
@@ -315,9 +315,8 @@ const Index = () => {
       <footer className="py-12 bg-card border-t border-border">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <a href="#inicio" className="flex flex-col items-center group cursor-pointer">
-              <span className="font-serif text-xl tracking-[0.15em] text-gradient-gold font-medium group-hover:opacity-80 transition-opacity">ADA</span>
-              <span className="font-sans text-[8px] tracking-[0.4em] text-muted-foreground uppercase -mt-0.5">Gioielli</span>
+            <a href="#inicio" className="flex items-center group cursor-pointer">
+              <img src={adaLogo} alt="Ada Gioielli" className="h-8 w-auto group-hover:opacity-80 transition-opacity" />
             </a>
             <p className="text-muted-foreground font-sans text-sm text-center">
               © 2024 Ada Gioielli. Todos os direitos reservados. Transformando amor em joias.

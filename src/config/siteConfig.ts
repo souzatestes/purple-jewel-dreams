@@ -72,12 +72,14 @@ export const SOBRE = {
 // ═══════════════════════════════════════════════════════════════
 
 export const CATEGORIAS = [
-  { nome: "Colares", slug: "colares", icone: "💎" },
-  { nome: "Brincos", slug: "brincos", icone: "✨" },
-  { nome: "Anéis", slug: "aneis", icone: "💍" },
-  { nome: "Pulseiras", slug: "pulseiras", icone: "⭐" },
-  { nome: "Infantil", slug: "infantil", icone: "🎀" },
-  { nome: "Religiosas", slug: "religiosas", icone: "🙏" },
+  { nome: "Anéis", slug: "anel", icone: "💍" },
+  { nome: "Brincos", slug: "brinco", icone: "✨" },
+  { nome: "Colares", slug: "colar", icone: "💎" },
+  { nome: "Especial Criança", slug: "especial-crianca", icone: "🎀" },
+  { nome: "Pingentes", slug: "pingente", icone: "⭐" },
+  { nome: "Pulseiras", slug: "pulseira", icone: "💫" },
+  { nome: "Religiosos", slug: "religioso", icone: "🙏" },
+  { nome: "Sobre", slug: "sobre", icone: "💜" },
 ];
 
 // ═══════════════════════════════════════════════════════════════
