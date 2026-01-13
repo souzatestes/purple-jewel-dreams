@@ -75,12 +75,65 @@ export const CATEGORIAS = [
   { nome: "Anéis", slug: "anel", icone: "💍" },
   { nome: "Brincos", slug: "brinco", icone: "✨" },
   { nome: "Colares", slug: "colar", icone: "💎" },
+  { nome: "Coleção Sim", slug: "colecao-sim", icone: "💍✨" },
   { nome: "Especial Criança", slug: "especial-crianca", icone: "🎀" },
   { nome: "Pingentes", slug: "pingente", icone: "⭐" },
   { nome: "Pulseiras", slug: "pulseira", icone: "💫" },
   { nome: "Religiosos", slug: "religioso", icone: "🙏" },
   { nome: "Sobre", slug: "sobre", icone: "💜" },
 ];
+
+// ═══════════════════════════════════════════════════════════════
+// 🖼️ IMAGENS DE DESTAQUE POR CATEGORIA
+// ═══════════════════════════════════════════════════════════════
+// 
+// Adicione até 10 imagens por categoria para o carrossel de destaque
+// Cada imagem tem: src (caminho), alt (descrição), link (opcional)
+//
+// Para adicionar imagens:
+// 1. Adicione a imagem na pasta src/assets/
+// 2. Importe a imagem no arquivo Index.tsx e adicione ao IMAGENS
+// 3. Use o nome do arquivo aqui
+
+export const DESTAQUES_CATEGORIA: Record<string, { src: string; alt: string; link?: string }[]> = {
+  "anel": [
+    { src: "jewelry-ring.jpg", alt: "Anel destaque 1" },
+    { src: "jewelry-ring.jpg", alt: "Anel destaque 2" },
+    { src: "jewelry-ring.jpg", alt: "Anel destaque 3" },
+  ],
+  "brinco": [
+    { src: "jewelry-earrings.jpg", alt: "Brinco destaque 1" },
+    { src: "jewelry-earrings.jpg", alt: "Brinco destaque 2" },
+    { src: "jewelry-earrings.jpg", alt: "Brinco destaque 3" },
+  ],
+  "colar": [
+    { src: "jewelry-necklace.jpg", alt: "Colar destaque 1" },
+    { src: "jewelry-necklace.jpg", alt: "Colar destaque 2" },
+    { src: "jewelry-necklace.jpg", alt: "Colar destaque 3" },
+  ],
+  "colecao-sim": [
+    { src: "jewelry-ring.jpg", alt: "Coleção Sim destaque 1" },
+    { src: "jewelry-earrings.jpg", alt: "Coleção Sim destaque 2" },
+    { src: "jewelry-necklace.jpg", alt: "Coleção Sim destaque 3" },
+  ],
+  "especial-crianca": [
+    { src: "jewelry-bracelet.jpg", alt: "Infantil destaque 1" },
+    { src: "jewelry-necklace.jpg", alt: "Infantil destaque 2" },
+  ],
+  "pingente": [
+    { src: "jewelry-necklace.jpg", alt: "Pingente destaque 1" },
+    { src: "jewelry-earrings.jpg", alt: "Pingente destaque 2" },
+  ],
+  "pulseira": [
+    { src: "jewelry-bracelet.jpg", alt: "Pulseira destaque 1" },
+    { src: "jewelry-bracelet.jpg", alt: "Pulseira destaque 2" },
+  ],
+  "religioso": [
+    { src: "jewelry-necklace.jpg", alt: "Religioso destaque 1" },
+    { src: "jewelry-earrings.jpg", alt: "Religioso destaque 2" },
+  ],
+  "sobre": [],
+};
 
 // ═══════════════════════════════════════════════════════════════
 // 💎 PRODUTOS

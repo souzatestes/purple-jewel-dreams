@@ -25,8 +25,10 @@ import {
   CATEGORIAS, 
   PRODUTOS, 
   CONTATOS,
+  DESTAQUES_CATEGORIA,
   getCategoryBySlug 
 } from "@/config/siteConfig";
+import { CategoryHighlightCarousel } from "@/components/CategoryHighlightCarousel";
 
 // Mapeamento de imagens (adicione novas imagens aqui)
 const IMAGENS: Record<string, string> = {
@@ -78,6 +80,7 @@ const Index = () => {
             <a href="#inicio" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Início</a>
             <a href="#sobre" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Quem Somos</a>
             <a href="#categorias" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Categorias</a>
+            <button onClick={() => handleCategoryClick("colecao-sim")} className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Coleção Sim</button>
             <a href="#joias" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Joias</a>
             <a href="#contato" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Contato</a>
           </div>
@@ -108,6 +111,7 @@ const Index = () => {
               <a href="#inicio" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Início</a>
               <a href="#sobre" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Quem Somos</a>
               <a href="#categorias" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Categorias</a>
+              <button onClick={() => { handleCategoryClick("colecao-sim"); setMobileMenuOpen(false); }} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2 text-left">Coleção Sim</button>
               <a href="#joias" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Joias</a>
               <a href="#contato" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Contato</a>
               <a 
@@ -278,6 +282,18 @@ const Index = () => {
               Clique em qualquer peça para consultar via WhatsApp
             </p>
           </div>
+
+          {/* Carrossel de Destaque por Categoria */}
+          {activeCategory && DESTAQUES_CATEGORIA[activeCategory] && DESTAQUES_CATEGORIA[activeCategory].length > 0 && (
+            <div className="mb-16">
+              <CategoryHighlightCarousel 
+                images={DESTAQUES_CATEGORIA[activeCategory].map(img => ({
+                  ...img,
+                  src: IMAGENS[img.src] || img.src
+                }))}
+              />
+            </div>
+          )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
