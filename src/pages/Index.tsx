@@ -14,6 +14,7 @@ import braceletImg from "@/assets/jewelry-bracelet.jpg";
 import { CategoryCarousel } from "@/components/CategoryCarousel";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ContactSection } from "@/components/ContactSection";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { ProductCard } from "@/components/ProductCard";
 
 // ⚙️ CONFIGURAÇÃO - Edite o arquivo siteConfig.ts para alterar textos e produtos
@@ -69,11 +70,16 @@ const Index = () => {
       <WhatsAppButton variant="floating" />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <a href="#inicio" className="flex items-center gap-2 group cursor-pointer">
-            <img src={adaLogo} alt="Ada Gioielli" className="h-10 md:h-12 w-auto group-hover:opacity-80 transition-opacity" />
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="#inicio" className="flex items-center gap-2 group cursor-pointer">
+              <img src={adaLogo} alt="Ada Gioielli" className="h-10 md:h-12 w-auto group-hover:opacity-80 transition-opacity" />
+            </a>
+            <div className="hidden md:block">
+              <ThemeSwitcher />
+            </div>
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
