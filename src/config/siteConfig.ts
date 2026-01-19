@@ -72,15 +72,15 @@ export const SOBRE = {
 // ═══════════════════════════════════════════════════════════════
 
 export const CATEGORIAS = [
-  { nome: "Anéis", slug: "anel", icone: "💍" },
-  { nome: "Brincos", slug: "brinco", icone: "✨" },
-  { nome: "Colares", slug: "colar", icone: "💎" },
-  { nome: "Coleção Sim", slug: "colecao-sim", icone: "💍✨" },
-  { nome: "Especial Criança", slug: "especial-crianca", icone: "🎀" },
-  { nome: "Pingentes", slug: "pingente", icone: "⭐" },
-  { nome: "Pulseiras", slug: "pulseira", icone: "💫" },
-  { nome: "Religiosos", slug: "religioso", icone: "🙏" },
-  { nome: "Sobre", slug: "sobre", icone: "💜" },
+  { nome: "Anéis", slug: "anel" },
+  { nome: "Brincos", slug: "brinco" },
+  { nome: "Colares", slug: "colar" },
+  { nome: "Coleção Sim", slug: "colecao-sim" },
+  { nome: "Especial Criança", slug: "especial-crianca" },
+  { nome: "Pingentes", slug: "pingente" },
+  { nome: "Pulseiras", slug: "pulseira" },
+  { nome: "Religiosos", slug: "religioso" },
+  { nome: "Sobre", slug: "sobre" },
 ];
 
 // ═══════════════════════════════════════════════════════════════

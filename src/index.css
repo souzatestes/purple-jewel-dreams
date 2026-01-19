@@ -53,6 +53,7 @@
     --shadow-glow: 0 4px 20px hsl(0 0% 0% / 0.06);
     --shadow-gold: 0 4px 16px hsl(38 70% 50% / 0.15);
     --shadow-card: 0 2px 12px hsl(0 0% 0% / 0.04);
+    --shadow-purple: 0 4px 16px hsl(280 45% 45% / 0.15);
 
     --sidebar-background: 30 15% 98%;
     --sidebar-foreground: 0 0% 10%;
@@ -108,6 +109,14 @@
 
   .shadow-gold {
     box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-purple {
+    box-shadow: var(--shadow-purple);
+  }
+
+  .hover-purple {
+    @apply transition-all duration-300 hover:text-primary hover:shadow-purple;
   }
 
   .animate-fade-in {
