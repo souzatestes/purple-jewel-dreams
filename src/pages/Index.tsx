@@ -4,7 +4,6 @@ import { Instagram, Heart, Sparkles, Menu, X } from "lucide-react";
 
 // 🎨 IMAGENS - Adicione suas imagens aqui
 import heroImage from "@/assets/hero-jewelry.jpg";
-import adaLogo from "@/assets/ada-logo.png";
 import necklaceImg from "@/assets/jewelry-necklace.jpg";
 import earringsImg from "@/assets/jewelry-earrings.jpg";
 import ringImg from "@/assets/jewelry-ring.jpg";
@@ -18,6 +17,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ContactSection } from "@/components/ContactSection";
 import { ProductCard } from "@/components/ProductCard";
 import { AboutVideoSection } from "@/components/AboutVideoSection";
+import { TypingText } from "@/components/TypingText";
 
 // ⚙️ CONFIGURAÇÃO - Edite o arquivo siteConfig.ts para alterar textos e produtos
 import { 
@@ -71,7 +71,9 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <a href="#inicio" className="flex items-center gap-2 group cursor-pointer">
-            <img src={adaLogo} alt="Ada Gioielli" className="h-10 md:h-12 w-auto group-hover:opacity-80 transition-opacity" />
+            <span className="font-serif text-xl md:text-2xl font-medium text-gradient-gold group-hover:opacity-80 transition-opacity">
+              <TypingText text="Ada Gioielli" speed={120} delay={300} />
+            </span>
           </a>
 
           {/* Desktop Menu */}
@@ -139,13 +141,6 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center pt-20">
-          <div className="animate-fade-in mb-8">
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent mb-6" />
-              <img src={adaLogo} alt="Ada Gioielli" className="h-24 md:h-32 lg:h-40 w-auto animate-shimmer" />
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent mt-6" />
-            </div>
-          </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-6 animate-fade-in-delay-1">
             <span className="text-gradient-gold">Sua</span>{" "}
@@ -341,7 +336,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <a href="#inicio" className="flex items-center group cursor-pointer">
-              <img src={adaLogo} alt="Ada Gioielli" className="h-8 w-auto group-hover:opacity-80 transition-opacity" />
+              <span className="font-serif text-lg font-medium text-gradient-gold group-hover:opacity-80 transition-opacity">
+                Ada Gioielli
+              </span>
             </a>
             <p className="text-muted-foreground font-sans text-sm text-center">
               © 2024 Ada Gioielli. Todos os direitos reservados. Transformando amor em joias.
