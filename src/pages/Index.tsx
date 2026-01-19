@@ -68,32 +68,30 @@ const Index = () => {
       <WhatsAppButton variant="floating" />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-sm border-b border-border/50">
+        <div className="container mx-auto px-4 py-5 flex items-center justify-between">
           <a href="#inicio" className="flex items-center gap-2 group cursor-pointer">
-            <span className="font-serif text-xl md:text-2xl font-medium text-gradient-gold group-hover:opacity-80 transition-opacity">
+            <span className="font-serif text-lg md:text-xl font-normal tracking-tight text-foreground group-hover:opacity-70 transition-opacity">
               <TypingText text="Ada Gioielli" speed={120} delay={300} />
             </span>
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#inicio" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Início</a>
-            <a href="#sobre" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Quem Somos</a>
-            <a href="#categorias" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Categorias</a>
-            <button onClick={() => handleCategoryClick("colecao-sim")} className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Coleção Sim</button>
-            <a href="#joias" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Joias</a>
-            <a href="#contato" className="text-foreground/80 hover:text-primary transition-colors font-sans text-sm tracking-wide relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full">Contato</a>
+          <div className="hidden md:flex items-center gap-10">
+            <a href="#inicio" className="text-foreground/60 hover:text-foreground transition-colors font-sans text-xs tracking-[0.15em] uppercase">Início</a>
+            <a href="#sobre" className="text-foreground/60 hover:text-foreground transition-colors font-sans text-xs tracking-[0.15em] uppercase">Sobre</a>
+            <a href="#categorias" className="text-foreground/60 hover:text-foreground transition-colors font-sans text-xs tracking-[0.15em] uppercase">Coleções</a>
+            <a href="#joias" className="text-foreground/60 hover:text-foreground transition-colors font-sans text-xs tracking-[0.15em] uppercase">Joias</a>
+            <a href="#contato" className="text-foreground/60 hover:text-foreground transition-colors font-sans text-xs tracking-[0.15em] uppercase">Contato</a>
           </div>
 
           <a 
             href={CONTATOS.instagram.url}
             target="_blank" 
             rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 bg-primary/20 hover:bg-primary/30 text-primary px-4 py-2 rounded-full transition-all duration-300 font-sans text-sm hover:scale-105"
+            className="hidden md:flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors font-sans text-xs tracking-wide"
           >
             <Instagram className="w-4 h-4" />
-            <span>@{CONTATOS.instagram.usuario}</span>
           </a>
 
           {/* Mobile Menu Button */}
@@ -130,67 +128,66 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
         <div className="absolute inset-0">
           <img 
             src={heroImage} 
             alt="Joias Ada Gioielli - Semijoias femininas e delicadas" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center pt-20">
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-6 animate-fade-in-delay-1">
-            <span className="text-gradient-gold">Sua</span>{" "}
-            <span className="text-foreground">feminilidade em</span>{" "}
-            <span className="text-gradient-purple">joias</span>
+          <div className="mb-8 animate-fade-in">
+            <span className="text-xs tracking-[0.4em] uppercase text-muted-foreground font-sans">Semijoias Exclusivas</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-normal mb-8 animate-fade-in-delay-1 tracking-tight">
+            <span className="text-foreground">Sua feminilidade</span>
+            <br />
+            <span className="text-gradient-gold">em joias</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-sans font-light animate-fade-in-delay-2">
-            Semijoias delicadas que celebram sua coragem de ser quem você é. 
-            Cada peça é um lembrete diário de sua força e feminilidade.
+          <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto mb-12 font-sans font-light animate-fade-in-delay-2 leading-relaxed">
+            Peças delicadas que celebram sua essência. 
+            Cada joia conta uma história única.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-3">
-            <WhatsAppButton variant="cta">
-              <Sparkles className="w-5 h-5" />
-              Quero conhecer as joias
+            <WhatsAppButton variant="cta" className="bg-foreground hover:bg-foreground/90 text-background">
+              <Sparkles className="w-4 h-4" />
+              Explorar Coleção
             </WhatsAppButton>
             <a 
               href="#sobre"
-              className="inline-flex items-center justify-center gap-2 border border-gold/50 hover:border-gold text-gold-light hover:text-gold px-8 py-4 rounded-full font-sans font-medium transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 border border-foreground/20 hover:border-foreground/40 text-foreground px-8 py-4 rounded-full font-sans text-sm transition-all duration-300"
             >
-              Conheça Nossa História
+              Nossa História
             </a>
           </div>
         </div>
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 bg-primary rounded-full animate-pulse" />
+          <div className="w-5 h-8 border border-foreground/20 rounded-full flex items-start justify-center p-1.5">
+            <div className="w-1 h-2 bg-foreground/40 rounded-full" />
           </div>
         </div>
       </section>
 
       {/* About Section - Quem Somos com Vídeo */}
-      <section id="sobre" className="py-24 bg-gradient-card relative">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+      <section id="sobre" className="py-24 bg-background">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="text-gold font-sans text-sm tracking-[0.3em] uppercase mb-4 block">Quem Somos</span>
-            <h2 className="text-3xl md:text-5xl font-serif mb-12">
-              <span className="text-gradient-gold">ADA</span>{" "}
-              <span className="text-gradient-purple">GIOIELLI</span>
+            <span className="text-xs tracking-[0.4em] uppercase text-muted-foreground font-sans mb-6 block">Nossa História</span>
+            <h2 className="text-3xl md:text-5xl font-serif font-normal mb-4 tracking-tight">
+              Ada Gioielli
             </h2>
+            <div className="w-12 h-px bg-accent mx-auto mb-12" />
             
             {/* Vídeo de Apresentação */}
-            <div className="mb-12">
+            <div className="mb-16">
               <AboutVideoSection 
                 videoSrc={adaVideo}
                 posterImage={adaFoto}
@@ -200,37 +197,32 @@ const Index = () => {
             </div>
             
             {/* Manifesto */}
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 md:p-12 mb-12 hover:border-primary/30 transition-all duration-500">
-              <Heart className="w-12 h-12 text-primary mx-auto mb-6" />
-              <p className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8">
-                "Acreditamos que o amor e o zelo têm o poder de transformar e melhorar as vidas das pessoas."
+            <div className="max-w-2xl mx-auto mb-16">
+              <p className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8 italic">
+                "Acreditamos que o amor e o zelo têm o poder de transformar vidas."
               </p>
-              <p className="text-lg text-muted-foreground font-sans font-light leading-relaxed">
-                Queremos te encorajar a abraçar e mostrar a sua <span className="text-primary font-medium">feminilidade</span> e <span className="text-gold font-medium">delicadeza</span> sem medo. 
-                Nossas joias serão o seu lembrete diário de <span className="text-primary font-medium">coragem</span> para buscar as transformações 
-                que você busca na sua vida, sem abrir mão da sua feminilidade e delicadeza.
+              <p className="text-base text-muted-foreground font-sans font-light leading-relaxed">
+                Queremos te encorajar a abraçar sua <span className="text-accent font-medium">feminilidade</span> e <span className="text-accent font-medium">delicadeza</span> sem medo. 
+                Nossas joias são lembretes diários de coragem para buscar as transformações que você deseja.
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-8 mt-12">
+            <div className="flex flex-wrap justify-center gap-12">
               <div className="text-center">
-                <div className="text-4xl font-serif text-gradient-gold">♥</div>
-                <div className="text-muted-foreground font-sans text-sm mt-2">Amor</div>
+                <div className="text-2xl text-accent mb-2">♥</div>
+                <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-sans">Amor</div>
               </div>
-              <div className="w-px h-16 bg-border" />
               <div className="text-center">
-                <div className="text-4xl font-serif text-gradient-purple">✨</div>
-                <div className="text-muted-foreground font-sans text-sm mt-2">Delicadeza</div>
+                <div className="text-2xl text-accent mb-2">✨</div>
+                <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-sans">Delicadeza</div>
               </div>
-              <div className="w-px h-16 bg-border" />
               <div className="text-center">
-                <div className="text-4xl font-serif text-foreground">💪</div>
-                <div className="text-muted-foreground font-sans text-sm mt-2">Coragem</div>
+                <div className="text-2xl text-foreground/60 mb-2">💎</div>
+                <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-sans">Exclusividade</div>
               </div>
-              <div className="w-px h-16 bg-border" />
               <div className="text-center">
-                <div className="text-4xl font-serif text-gradient-gold">🌸</div>
-                <div className="text-muted-foreground font-sans text-sm mt-2">Feminilidade</div>
+                <div className="text-2xl text-primary mb-2">🌸</div>
+                <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-sans">Feminilidade</div>
               </div>
             </div>
           </div>
@@ -238,16 +230,14 @@ const Index = () => {
       </section>
 
       {/* Categories Section with Carousel */}
-      <section id="categorias" className="py-20 bg-background">
+      <section id="categorias" className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="text-gold font-sans text-sm tracking-[0.3em] uppercase mb-4 block">Categorias</span>
-            <h2 className="text-3xl md:text-5xl font-serif mb-4">
-              Encontre a <span className="text-gradient-purple">joia perfeita</span>
+          <div className="text-center mb-16">
+            <span className="text-xs tracking-[0.4em] uppercase text-muted-foreground font-sans mb-6 block">Coleções</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-normal mb-4 tracking-tight">
+              Explore nossas categorias
             </h2>
-            <p className="text-muted-foreground font-sans max-w-xl mx-auto">
-              Clique em uma categoria para filtrar as joias
-            </p>
+            <div className="w-12 h-px bg-accent mx-auto" />
           </div>
 
           <CategoryCarousel 
@@ -259,9 +249,9 @@ const Index = () => {
             <div className="text-center mt-8">
               <button
                 onClick={() => setActiveCategory(null)}
-                className="text-muted-foreground hover:text-primary font-sans text-sm underline transition-colors"
+                className="text-muted-foreground hover:text-foreground font-sans text-sm underline-offset-4 hover:underline transition-colors"
               >
-                Ver todas as categorias
+                Ver todas
               </button>
             </div>
           )}
@@ -269,21 +259,18 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section id="joias" className="py-24 bg-gradient-card relative">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-3xl" />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
+      <section id="joias" className="py-24 bg-background">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-gold font-sans text-sm tracking-[0.3em] uppercase mb-4 block">
-              {activeCategory ? getCategoryName(activeCategory) : "Destaques"}
+            <span className="text-xs tracking-[0.4em] uppercase text-muted-foreground font-sans mb-6 block">
+              {activeCategory ? getCategoryName(activeCategory) : "Curadoria"}
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif mb-4">
-              Peças <span className="text-gradient-gold">exclusivas</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-normal mb-4 tracking-tight">
+              Peças selecionadas
             </h2>
-            <p className="text-muted-foreground font-sans max-w-xl mx-auto">
-              Clique em qualquer peça para consultar via WhatsApp
+            <div className="w-12 h-px bg-accent mx-auto mb-6" />
+            <p className="text-muted-foreground font-sans text-sm max-w-md mx-auto">
+              Toque em qualquer peça para mais informações
             </p>
           </div>
 
@@ -299,7 +286,7 @@ const Index = () => {
             </div>
           )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProducts.map((product) => (
               <ProductCard
                 key={product.name}
@@ -311,17 +298,17 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="text-center mt-16 flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href={CONTATOS.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 border border-primary hover:bg-primary hover:text-primary-foreground text-primary px-8 py-4 rounded-full font-sans transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 border border-foreground/20 hover:border-foreground/40 text-foreground px-8 py-3 font-sans text-sm transition-all duration-300"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-4 h-4" />
               Ver mais no Instagram
             </a>
-            <WhatsAppButton variant="cta" className="bg-primary hover:bg-primary/90">
+            <WhatsAppButton variant="cta" className="bg-foreground hover:bg-foreground/90 text-background px-8 py-3">
               Falar com especialista
             </WhatsAppButton>
           </div>
@@ -332,28 +319,28 @@ const Index = () => {
       <ContactSection />
 
       {/* Footer */}
-      <footer className="py-12 bg-card border-t border-border">
+      <footer className="py-16 bg-muted/30 border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col items-center gap-8">
             <a href="#inicio" className="flex items-center group cursor-pointer">
-              <span className="font-serif text-lg font-medium text-gradient-gold group-hover:opacity-80 transition-opacity">
+              <span className="font-serif text-xl font-normal tracking-tight text-foreground group-hover:opacity-70 transition-opacity">
                 Ada Gioielli
               </span>
             </a>
-            <p className="text-muted-foreground font-sans text-sm text-center">
-              © 2024 Ada Gioielli. Todos os direitos reservados. Transformando amor em joias.
-            </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-6">
               <a 
                 href={CONTATOS.instagram.url}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary/20 hover:bg-primary/30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 border border-foreground/20 hover:border-foreground/40 rounded-full flex items-center justify-center transition-all duration-300"
               >
-                <Instagram className="w-5 h-5 text-primary" />
+                <Instagram className="w-4 h-4 text-foreground/60" />
               </a>
               <WhatsAppButton variant="inline" />
             </div>
+            <p className="text-muted-foreground font-sans text-xs tracking-wide text-center">
+              © 2024 Ada Gioielli. Todos os direitos reservados.
+            </p>
           </div>
         </div>
       </footer>
