@@ -207,22 +207,22 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-12">
-              <div className="text-center">
-                <div className="text-2xl text-accent mb-2">♥</div>
-                <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-sans">Amor</div>
+            <div className="flex flex-wrap justify-center gap-16">
+              <div className="text-center group cursor-pointer">
+                <div className="w-px h-6 bg-primary/30 mx-auto mb-3 group-hover:bg-primary group-hover:h-8 transition-all duration-300" />
+                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-primary transition-colors duration-300">Amor</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl text-accent mb-2">✨</div>
-                <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-sans">Delicadeza</div>
+              <div className="text-center group cursor-pointer">
+                <div className="w-px h-6 bg-primary/30 mx-auto mb-3 group-hover:bg-primary group-hover:h-8 transition-all duration-300" />
+                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-primary transition-colors duration-300">Delicadeza</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl text-foreground/60 mb-2">💎</div>
-                <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-sans">Exclusividade</div>
+              <div className="text-center group cursor-pointer">
+                <div className="w-px h-6 bg-primary/30 mx-auto mb-3 group-hover:bg-primary group-hover:h-8 transition-all duration-300" />
+                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-primary transition-colors duration-300">Exclusividade</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl text-primary mb-2">🌸</div>
-                <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-sans">Feminilidade</div>
+              <div className="text-center group cursor-pointer">
+                <div className="w-px h-6 bg-primary/30 mx-auto mb-3 group-hover:bg-primary group-hover:h-8 transition-all duration-300" />
+                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-primary transition-colors duration-300">Feminilidade</div>
               </div>
             </div>
           </div>

@@ -24,22 +24,19 @@ const CategoryCarousel = ({ onCategoryClick, activeCategory }: CategoryCarouselP
       >
         <CarouselContent className="-ml-2 md:-ml-4">
           {CATEGORIAS.map((category) => (
-            <CarouselItem key={category.slug} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
+            <CarouselItem key={category.slug} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
               <button
                 onClick={() => onCategoryClick(category.slug)}
-                className={`group relative w-full aspect-square rounded-full flex flex-col items-center justify-center transition-all duration-500 cursor-pointer
+                className={`group relative w-full py-4 px-6 flex items-center justify-center transition-all duration-300 cursor-pointer border-b-2
                   ${activeCategory === category.slug 
-                    ? "bg-primary border-2 border-primary shadow-glow" 
-                    : "bg-gradient-to-b from-purple-light/20 to-primary/10 border-2 border-primary/30 hover:border-primary hover:shadow-glow"
+                    ? "border-primary bg-primary/5" 
+                    : "border-transparent hover:border-primary/50 hover:bg-primary/5"
                   }`}
               >
-                <span className="text-3xl mb-2 transition-transform duration-300 group-hover:scale-110">
-                  {category.icone}
-                </span>
-                <span className={`font-serif text-sm md:text-base transition-colors duration-300
+                <span className={`font-serif text-sm md:text-base tracking-wide transition-colors duration-300
                   ${activeCategory === category.slug 
-                    ? "text-primary-foreground" 
-                    : "text-foreground group-hover:text-primary"
+                    ? "text-primary" 
+                    : "text-foreground/70 group-hover:text-primary"
                   }`}>
                   {category.nome}
                 </span>
@@ -47,8 +44,8 @@ const CategoryCarousel = ({ onCategoryClick, activeCategory }: CategoryCarouselP
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden md:flex -left-12 bg-card/80 border-primary/30 hover:bg-primary hover:text-primary-foreground hover:border-primary" />
-        <CarouselNext className="hidden md:flex -right-12 bg-card/80 border-primary/30 hover:bg-primary hover:text-primary-foreground hover:border-primary" />
+        <CarouselPrevious className="hidden md:flex -left-12 bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" />
+        <CarouselNext className="hidden md:flex -right-12 bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" />
       </Carousel>
     </div>
   );
