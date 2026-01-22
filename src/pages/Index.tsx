@@ -312,7 +312,7 @@ const Index = () => {
               <Instagram className="w-4 h-4" />
               Ver mais no Instagram
             </a>
-            <WhatsAppButton variant="cta" className="bg-foreground hover:bg-foreground/90 text-background px-8 py-3">
+            <WhatsAppButton variant="cta" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
               Falar com especialista
             </WhatsAppButton>
           </div>
