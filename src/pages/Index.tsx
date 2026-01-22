@@ -160,7 +160,7 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-3">
-            <WhatsAppButton variant="cta" className="bg-foreground hover:bg-foreground/90 text-background">
+            <WhatsAppButton variant="cta" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Sparkles className="w-4 h-4" />
               Explorar Coleção
             </WhatsAppButton>
