@@ -64,6 +64,71 @@
     --sidebar-border: 30 15% 90%;
     --sidebar-ring: 280 45% 45%;
   }
+
+  /* Tema Roxo - Purple Theme */
+  .theme-purple {
+    --background: 280 30% 8%;
+    --foreground: 280 20% 95%;
+
+    --card: 280 25% 12%;
+    --card-foreground: 280 20% 95%;
+
+    --popover: 280 25% 10%;
+    --popover-foreground: 280 20% 95%;
+
+    --primary: 280 60% 65%;
+    --primary-foreground: 280 30% 8%;
+
+    --secondary: 280 20% 18%;
+    --secondary-foreground: 280 20% 90%;
+
+    --muted: 280 20% 15%;
+    --muted-foreground: 280 15% 60%;
+
+    --accent: 38 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 20% 20%;
+    --input: 280 20% 18%;
+    --ring: 280 60% 65%;
+
+    --gold: 38 70% 55%;
+    --gold-light: 38 60% 65%;
+    --purple-light: 280 50% 70%;
+    --purple-glow: 280 60% 60%;
+    
+    --gradient-hero: linear-gradient(180deg, hsl(280 30% 8%) 0%, hsl(280 25% 12%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(280 25% 14%) 0%, hsl(280 25% 10%) 100%);
+    
+    --shadow-glow: 0 4px 20px hsl(280 60% 50% / 0.15);
+    --shadow-gold: 0 4px 16px hsl(38 70% 50% / 0.2);
+    --shadow-card: 0 2px 12px hsl(280 50% 40% / 0.1);
+    --shadow-purple: 0 4px 16px hsl(280 60% 50% / 0.25);
+
+    --sidebar-background: 280 25% 10%;
+    --sidebar-foreground: 280 20% 95%;
+    --sidebar-primary: 280 60% 65%;
+    --sidebar-primary-foreground: 280 30% 8%;
+    --sidebar-accent: 38 70% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 280 20% 20%;
+    --sidebar-ring: 280 60% 65%;
+  }
+
+  .theme-purple ::-webkit-scrollbar-track {
+    background: hsl(280 25% 12%);
+  }
+
+  .theme-purple ::-webkit-scrollbar-thumb {
+    background: hsl(280 30% 30%);
+  }
+
+  .theme-purple ::-webkit-scrollbar-thumb:hover {
+    background: hsl(280 60% 65%);
+  }
 }
 
 @layer base {

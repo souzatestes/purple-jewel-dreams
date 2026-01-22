@@ -18,6 +18,7 @@ import { ContactSection } from "@/components/ContactSection";
 import { ProductCard } from "@/components/ProductCard";
 import { AboutVideoSection } from "@/components/AboutVideoSection";
 import { TypingText } from "@/components/TypingText";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 // ⚙️ CONFIGURAÇÃO - Edite o arquivo siteConfig.ts para alterar textos e produtos
 import { 
@@ -85,14 +86,17 @@ const Index = () => {
             <a href="#contato" className="text-foreground/60 hover:text-foreground transition-colors font-sans text-xs tracking-[0.15em] uppercase">Contato</a>
           </div>
 
-          <a 
-            href={CONTATOS.instagram.url}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors font-sans text-xs tracking-wide"
-          >
-            <Instagram className="w-4 h-4" />
-          </a>
+          <div className="hidden md:flex items-center gap-4">
+            <a 
+              href={CONTATOS.instagram.url}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-foreground/60 hover:text-foreground transition-colors"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
+            <ThemeToggle />
+          </div>
 
           {/* Mobile Menu Button */}
           <button 
