@@ -19,11 +19,12 @@ const ContactSection = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* WhatsApp */}
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
+              onClick={() => window.open(getWhatsAppUrl(), '_blank', 'noopener,noreferrer')}
               className="group bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-[#25D366]/50 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-1"
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && window.open(getWhatsAppUrl(), '_blank', 'noopener,noreferrer')}
             >
               <div className="w-14 h-14 bg-[#25D366]/20 group-hover:bg-[#25D366]/30 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors">
                 <MessageCircle className="w-6 h-6 text-[#25D366]" />
@@ -32,14 +33,15 @@ const ContactSection = () => {
               <p className="text-muted-foreground group-hover:text-[#25D366] font-sans text-sm transition-colors">
                 ({CONTATOS.whatsapp.numero.slice(2, 4)}) {CONTATOS.whatsapp.numero.slice(4, 9)}-{CONTATOS.whatsapp.numero.slice(9)}
               </p>
-            </a>
+            </div>
 
             {/* Instagram */}
-            <a
-              href={CONTATOS.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
+              onClick={() => window.open(CONTATOS.instagram.url, '_blank', 'noopener,noreferrer')}
               className="group bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 cursor-pointer hover:shadow-glow hover:-translate-y-1"
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && window.open(CONTATOS.instagram.url, '_blank', 'noopener,noreferrer')}
             >
               <div className="w-14 h-14 bg-primary/20 group-hover:bg-primary/30 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors">
                 <Instagram className="w-6 h-6 text-primary" />
@@ -48,12 +50,15 @@ const ContactSection = () => {
               <p className="text-muted-foreground group-hover:text-primary font-sans text-sm transition-colors">
                 @{CONTATOS.instagram.usuario}
               </p>
-            </a>
+            </div>
 
             {/* Email */}
-            <a
-              href={`mailto:${CONTATOS.email}`}
+            <div
+              onClick={() => window.location.href = `mailto:${CONTATOS.email}`}
               className="group bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 cursor-pointer hover:shadow-gold hover:-translate-y-1"
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && (window.location.href = `mailto:${CONTATOS.email}`)}
             >
               <div className="w-14 h-14 bg-gold/20 group-hover:bg-gold/30 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors">
                 <Mail className="w-6 h-6 text-gold" />
@@ -62,7 +67,7 @@ const ContactSection = () => {
               <p className="text-muted-foreground group-hover:text-gold font-sans text-sm transition-colors">
                 {CONTATOS.email}
               </p>
-            </a>
+            </div>
           </div>
 
           {/* CTA WhatsApp */}
