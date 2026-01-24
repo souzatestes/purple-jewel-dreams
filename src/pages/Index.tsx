@@ -4,10 +4,6 @@ import { Instagram, Heart, Sparkles, Menu, X } from "lucide-react";
 
 // 🎨 IMAGENS - Adicione suas imagens aqui
 import heroImage from "@/assets/hero-jewelry.jpg";
-import necklaceImg from "@/assets/jewelry-necklace.jpg";
-import earringsImg from "@/assets/jewelry-earrings.jpg";
-import ringImg from "@/assets/jewelry-ring.jpg";
-import braceletImg from "@/assets/jewelry-bracelet.jpg";
 import adaVideo from "@/assets/apresentacao-ada.mp4";
 import adaFoto from "@/assets/ada-foto.jpg";
 
@@ -15,53 +11,15 @@ import adaFoto from "@/assets/ada-foto.jpg";
 import { CategoryCarousel } from "@/components/CategoryCarousel";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ContactSection } from "@/components/ContactSection";
-import { ProductCard } from "@/components/ProductCard";
 import { AboutVideoSection } from "@/components/AboutVideoSection";
 import { TypingText } from "@/components/TypingText";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 // ⚙️ CONFIGURAÇÃO - Edite o arquivo siteConfig.ts para alterar textos e produtos
-import { 
-  CATEGORIAS, 
-  PRODUTOS, 
-  CONTATOS,
-  DESTAQUES_CATEGORIA,
-  getCategoryBySlug 
-} from "@/config/siteConfig";
-import { CategoryHighlightCarousel } from "@/components/CategoryHighlightCarousel";
-
-// Mapeamento de imagens (adicione novas imagens aqui)
-const IMAGENS: Record<string, string> = {
-  "jewelry-necklace.jpg": necklaceImg,
-  "jewelry-earrings.jpg": earringsImg,
-  "jewelry-ring.jpg": ringImg,
-  "jewelry-bracelet.jpg": braceletImg,
-  "hero-jewelry.jpg": heroImage,
-};
+import { CONTATOS } from "@/config/siteConfig";
 
 const Index = () => {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Mapeia produtos com imagens reais
-  const allProducts = PRODUTOS.map(p => ({
-    name: p.nome,
-    image: IMAGENS[p.imagem] || necklaceImg,
-    price: p.preco,
-    category: p.categoria,
-  }));
-
-  const filteredProducts = activeCategory 
-    ? allProducts.filter(p => p.category === activeCategory)
-    : allProducts;
-
-  const handleCategoryClick = (slug: string) => {
-    setActiveCategory(activeCategory === slug ? null : slug);
-  };
-
-  const getCategoryName = (slug: string) => {
-    return getCategoryBySlug(slug)?.nome || slug;
-  };
 
   return (
     <main className="min-h-screen bg-background">
@@ -114,7 +72,7 @@ const Index = () => {
               <a href="#inicio" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Início</a>
               <a href="#sobre" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Quem Somos</a>
               <a href="#categorias" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Categorias</a>
-              <button onClick={() => { handleCategoryClick("colecao-sim"); setMobileMenuOpen(false); }} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2 text-left">Coleção Sim</button>
+              <a href="/categoria/colecao-sim" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Coleção Sim</a>
               <a href="#joias" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Joias</a>
               <a href="#contato" onClick={() => setMobileMenuOpen(false)} className="text-foreground/80 hover:text-primary transition-colors font-sans text-base py-2">Contato</a>
               <a 
@@ -244,77 +202,36 @@ const Index = () => {
             <div className="w-12 h-px bg-accent mx-auto" />
           </div>
 
-          <CategoryCarousel 
-            onCategoryClick={handleCategoryClick}
-            activeCategory={activeCategory}
-          />
-
-          {activeCategory && (
-            <div className="text-center mt-8">
-              <button
-                onClick={() => setActiveCategory(null)}
-                className="text-muted-foreground hover:text-foreground font-sans text-sm underline-offset-4 hover:underline transition-colors"
-              >
-                Ver todas
-              </button>
-            </div>
-          )}
+          <CategoryCarousel />
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* CTA Joias - Redireciona para Categorias */}
       <section id="joias" className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-xs tracking-[0.4em] uppercase text-muted-foreground font-sans mb-6 block">
-              {activeCategory ? getCategoryName(activeCategory) : "Curadoria"}
-            </span>
+          <div className="text-center">
+            <span className="text-xs tracking-[0.4em] uppercase text-muted-foreground font-sans mb-6 block">Curadoria</span>
             <h2 className="text-3xl md:text-4xl font-serif font-normal mb-4 tracking-tight">
-              Peças selecionadas
+              Descubra nossas joias
             </h2>
             <div className="w-12 h-px bg-accent mx-auto mb-6" />
-            <p className="text-muted-foreground font-sans text-sm max-w-md mx-auto">
-              Toque em qualquer peça para mais informações
+            <p className="text-muted-foreground font-sans text-sm max-w-md mx-auto mb-10">
+              Explore todas as nossas categorias e encontre a joia perfeita para você
             </p>
-          </div>
-
-          {/* Carrossel de Destaque por Categoria */}
-          {activeCategory && DESTAQUES_CATEGORIA[activeCategory] && DESTAQUES_CATEGORIA[activeCategory].length > 0 && (
-            <div className="mb-16">
-              <CategoryHighlightCarousel 
-                images={DESTAQUES_CATEGORIA[activeCategory].map(img => ({
-                  ...img,
-                  src: IMAGENS[img.src] || img.src
-                }))}
-              />
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="#categorias"
+                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full font-sans text-sm transition-all duration-300"
+              >
+                <Sparkles className="w-4 h-4" />
+                Ver Todas as Categorias
+              </a>
+              <WhatsAppButton variant="cta" className="border border-foreground/20 hover:border-foreground/40 bg-transparent text-foreground px-8 py-4">
+                <Heart className="w-4 h-4" />
+                Falar com especialista
+              </WhatsAppButton>
             </div>
-          )}
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProducts.map((product) => (
-              <ProductCard
-                key={product.name}
-                name={product.name}
-                image={product.image}
-                price={product.price}
-                category={getCategoryName(product.category)}
-              />
-            ))}
-          </div>
-
-          <div className="text-center mt-16 flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href={CONTATOS.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 border border-foreground/20 hover:border-foreground/40 text-foreground px-8 py-3 font-sans text-sm transition-all duration-300"
-            >
-              <Instagram className="w-4 h-4" />
-              Ver mais no Instagram
-            </a>
-            <WhatsAppButton variant="cta" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
-              Falar com especialista
-            </WhatsAppButton>
           </div>
         </div>
       </section>
