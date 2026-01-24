@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Carousel,
   CarouselContent,
@@ -8,11 +9,14 @@ import {
 import { CATEGORIAS } from "@/config/siteConfig";
 
 interface CategoryCarouselProps {
-  onCategoryClick: (slug: string) => void;
-  activeCategory: string | null;
+  onCategoryClick?: (slug: string) => void;
+  activeCategory?: string | null;
 }
 
 const CategoryCarousel = ({ onCategoryClick, activeCategory }: CategoryCarouselProps) => {
+  // Filtra a categoria "sobre" que não deve aparecer como categoria de produtos
+  const productCategories = CATEGORIAS.filter(c => c.slug !== "sobre");
+
   return (
     <div className="w-full max-w-5xl mx-auto px-4">
       <Carousel
@@ -23,10 +27,11 @@ const CategoryCarousel = ({ onCategoryClick, activeCategory }: CategoryCarouselP
         className="w-full"
       >
         <CarouselContent className="-ml-2 md:-ml-4">
-          {CATEGORIAS.map((category) => (
+          {productCategories.map((category) => (
             <CarouselItem key={category.slug} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
-              <button
-                onClick={() => onCategoryClick(category.slug)}
+              <Link
+                to={`/categoria/${category.slug}`}
+                onClick={() => onCategoryClick?.(category.slug)}
                 className={`group relative w-full py-4 px-6 flex items-center justify-center transition-all duration-300 cursor-pointer border-b-2
                   ${activeCategory === category.slug 
                     ? "border-primary bg-primary/5" 
@@ -40,7 +45,7 @@ const CategoryCarousel = ({ onCategoryClick, activeCategory }: CategoryCarouselP
                   }`}>
                   {category.nome}
                 </span>
-              </button>
+              </Link>
             </CarouselItem>
           ))}
         </CarouselContent>
