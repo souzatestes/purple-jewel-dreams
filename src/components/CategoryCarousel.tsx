@@ -32,16 +32,18 @@ const CategoryCarousel = ({ onCategoryClick, activeCategory }: CategoryCarouselP
               <Link
                 to={`/categoria/${category.slug}`}
                 onClick={() => onCategoryClick?.(category.slug)}
-                className={`group relative w-full py-4 px-6 flex items-center justify-center transition-all duration-300 cursor-pointer border-b-2
+                className={`group relative w-full py-5 px-6 flex items-center justify-center transition-all duration-300 cursor-pointer rounded-xl border
                   ${activeCategory === category.slug 
-                    ? "border-primary bg-primary/5" 
-                    : "border-transparent hover:border-primary/50 hover:bg-primary/5"
+                    ? "border-gold bg-gold/10 shadow-gold" 
+                    : "border-border/50 hover:border-gold hover:bg-gold/5 hover:shadow-gold"
                   }`}
               >
+                {/* Decorative sparkle */}
+                <div className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-gold/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className={`font-serif text-sm md:text-base tracking-wide transition-colors duration-300
                   ${activeCategory === category.slug 
-                    ? "text-primary" 
-                    : "text-foreground/70 group-hover:text-primary"
+                    ? "text-gold" 
+                    : "text-foreground/70 group-hover:text-gold"
                   }`}>
                   {category.nome}
                 </span>
