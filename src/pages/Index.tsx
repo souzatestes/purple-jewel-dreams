@@ -91,19 +91,29 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gold/5 blur-3xl animate-float" />
+          <div className="absolute bottom-40 right-20 w-48 h-48 rounded-full bg-gold/5 blur-3xl animate-float" style={{ animationDelay: '-3s' }} />
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-purple-light/10 blur-2xl" />
+        </div>
+        
         <div className="absolute inset-0">
           <img 
             src={heroImage} 
             alt="Joias Ada Gioielli - Semijoias femininas e delicadas" 
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-15"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center pt-20">
           
-          <div className="mb-8 animate-fade-in">
+          {/* Decorative line */}
+          <div className="flex items-center justify-center gap-4 mb-8 animate-fade-in">
+            <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
             <span className="text-xs tracking-[0.4em] uppercase text-muted-foreground font-sans">Semijoias Exclusivas</span>
+            <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-normal mb-8 animate-fade-in-delay-1 tracking-tight">
@@ -118,22 +128,23 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-3">
-            <WhatsAppButton variant="cta" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <WhatsAppButton variant="cta" className="bg-gold hover:bg-gold-light text-white shadow-gold">
               <Sparkles className="w-4 h-4" />
               Explorar Coleção
             </WhatsAppButton>
             <a 
               href="#sobre"
-              className="inline-flex items-center justify-center gap-2 border border-foreground/20 hover:border-foreground/40 text-foreground px-8 py-4 rounded-full font-sans text-sm transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 border border-gold/30 hover:border-gold hover:bg-gold/5 text-foreground px-8 py-4 rounded-full font-sans text-sm transition-all duration-300"
             >
               Nossa História
             </a>
           </div>
         </div>
 
+        {/* Scroll indicator with gold accent */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-5 h-8 border border-foreground/20 rounded-full flex items-start justify-center p-1.5">
-            <div className="w-1 h-2 bg-foreground/40 rounded-full" />
+          <div className="w-5 h-8 border border-gold/40 rounded-full flex items-start justify-center p-1.5">
+            <div className="w-1 h-2 bg-gold/60 rounded-full" />
           </div>
         </div>
       </section>
@@ -169,22 +180,30 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-16">
+            <div className="flex flex-wrap justify-center gap-12 md:gap-16">
               <div className="text-center group cursor-pointer">
-                <div className="w-px h-6 bg-primary/30 mx-auto mb-3 group-hover:bg-primary group-hover:h-8 transition-all duration-300" />
-                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-primary transition-colors duration-300">Amor</div>
+                <div className="w-8 h-8 rounded-full border border-gold/30 mx-auto mb-3 flex items-center justify-center group-hover:border-gold group-hover:bg-gold/10 transition-all duration-300">
+                  <Heart className="w-3 h-3 text-gold/60 group-hover:text-gold transition-colors" />
+                </div>
+                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-gold transition-colors duration-300">Amor</div>
               </div>
               <div className="text-center group cursor-pointer">
-                <div className="w-px h-6 bg-primary/30 mx-auto mb-3 group-hover:bg-primary group-hover:h-8 transition-all duration-300" />
-                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-primary transition-colors duration-300">Delicadeza</div>
+                <div className="w-8 h-8 rounded-full border border-gold/30 mx-auto mb-3 flex items-center justify-center group-hover:border-gold group-hover:bg-gold/10 transition-all duration-300">
+                  <Sparkles className="w-3 h-3 text-gold/60 group-hover:text-gold transition-colors" />
+                </div>
+                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-gold transition-colors duration-300">Delicadeza</div>
               </div>
               <div className="text-center group cursor-pointer">
-                <div className="w-px h-6 bg-primary/30 mx-auto mb-3 group-hover:bg-primary group-hover:h-8 transition-all duration-300" />
-                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-primary transition-colors duration-300">Exclusividade</div>
+                <div className="w-8 h-8 rounded-full border border-gold/30 mx-auto mb-3 flex items-center justify-center group-hover:border-gold group-hover:bg-gold/10 transition-all duration-300">
+                  <div className="w-2 h-2 rounded-full bg-gold/60 group-hover:bg-gold transition-colors" />
+                </div>
+                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-gold transition-colors duration-300">Exclusividade</div>
               </div>
               <div className="text-center group cursor-pointer">
-                <div className="w-px h-6 bg-primary/30 mx-auto mb-3 group-hover:bg-primary group-hover:h-8 transition-all duration-300" />
-                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-primary transition-colors duration-300">Feminilidade</div>
+                <div className="w-8 h-8 rounded-full border border-gold/30 mx-auto mb-3 flex items-center justify-center group-hover:border-gold group-hover:bg-gold/10 transition-all duration-300">
+                  <div className="w-3 h-3 border border-gold/60 rounded-full group-hover:border-gold transition-colors" />
+                </div>
+                <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-sans group-hover:text-gold transition-colors duration-300">Feminilidade</div>
               </div>
             </div>
           </div>
